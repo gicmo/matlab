@@ -11,7 +11,7 @@ end
 fd = fopen (fullfile ('.git', 'HEAD'));
 curbranch = textscan (fd, '%s');
 path = char (curbranch{1}(2));
-rev = readFile (fullfile ('.git', path));
+rev = fileread (fullfile ('.git', path));
 fclose (fd);
 
 end
