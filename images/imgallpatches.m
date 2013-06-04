@@ -3,6 +3,9 @@ function [data, pos] = imgallpatches(img, patchsize, tiling)
 %   (c) Christian Kellner <kellner@bio.lmu.de>
 %       License: BSD-3 clause
 
+if ~exist('tiling', 'var'); tiling = 1; end
+
+[m, n, c] = size (img);
 pos = imggencoords(m, n, patchsize, tiling);
 npats = length(pos);
 
